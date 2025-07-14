@@ -689,7 +689,7 @@ module pulp_soc import dm::*; #(
         .hyper_rwds_o           ( hyper_rwds_o           ),
         .hyper_rwds_i           ( hyper_rwds_i           ),
         .hyper_rwds_oe_o        ( hyper_rwds_oe_o        ),
-        n.hyper_dq_i             ( hyper_dq_i             ),
+        .hyper_dq_i             ( hyper_dq_i             ),
         .hyper_dq_o             ( hyper_dq_o             ),
         .hyper_dq_oe_o          ( hyper_dq_oe_o          ),
         .hyper_reset_no         ( hyper_reset_no         ),
