@@ -179,13 +179,13 @@ module pulp_soc import dm::*; #(
     output logic [N_SPI-1:0][3:0]         spi_sdo_o,
     input logic [N_SPI-1:0][3:0]          spi_sdi_i,
 
-    output logic                          sdio_clk_o,
-    output logic                          sdio_cmd_o,
-    input logic                           sdio_cmd_i,
-    output logic                          sdio_cmd_oen_o,
-    output logic [3:0]                    sdio_data_o,
-    input logic [3:0]                     sdio_data_i,
-    output logic [3:0]                    sdio_data_oen_o,
+    // output logic                          sdio_clk_o,
+    // output logic                          sdio_cmd_o,
+    // input logic                           sdio_cmd_i,
+    // output logic                          sdio_cmd_oen_o,
+    // output logic [3:0]                    sdio_data_o,
+    // input logic [3:0]                     sdio_data_i,
+    // output logic [3:0]                    sdio_data_oen_o,
 
     output logic [1:0]                    hyper_cs_no,
     output logic                          hyper_ck_o,
@@ -674,13 +674,13 @@ module pulp_soc import dm::*; #(
         .spi_sdi_i              ( spi_sdi_i              ),
 
         //SDIO
-        .sdclk_o                ( sdio_clk_o             ),
-        .sdcmd_o                ( sdio_cmd_o             ),
-        .sdcmd_i                ( sdio_cmd_i             ),
-        .sdcmd_oen_o            ( sdio_cmd_oen_o         ),
-        .sddata_o               ( sdio_data_o            ),
-        .sddata_i               ( sdio_data_i            ),
-        .sddata_oen_o           ( sdio_data_oen_o        ),
+        // .sdclk_o                ( sdio_clk_o             ),
+        // .sdcmd_o                ( sdio_cmd_o             ),
+        // .sdcmd_i                ( sdio_cmd_i             ),
+        // .sdcmd_oen_o            ( sdio_cmd_oen_o         ),
+        // .sddata_o               ( sdio_data_o            ),
+        // .sddata_i               ( sdio_data_i            ),
+        // .sddata_oen_o           ( sdio_data_oen_o        ),
 
         //Hyper Bus
         .hyper_cs_no            ( hyper_cs_no            ),

@@ -99,9 +99,9 @@ udma/udma_i2c:
 udma/udma_qspi:
   commit: v1.0.4
   domain: [soc]
-udma/udma_sdio:
-  commit: v1.1.2
-  domain: [soc]
+# udma/udma_sdio:
+#   commit: v1.1.2
+#   domain: [soc]
 udma/udma_camera:
   commit: v1.1.2
   domain: [soc]
