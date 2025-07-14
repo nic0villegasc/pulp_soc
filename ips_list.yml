@@ -93,9 +93,9 @@ udma/udma_uart:
 udma/udma_i2c:
   commit: v1.0.0
   domain: [soc]
-udma/udma_i2s:
-  commit: v1.1.2
-  domain: [soc]
+# udma/udma_i2s:
+#   commit: v1.1.2
+#   domain: [soc]
 udma/udma_qspi:
   commit: v1.0.4
   domain: [soc]
