@@ -102,9 +102,9 @@ udma/udma_qspi:
 # udma/udma_sdio:
 #   commit: v1.1.2
 #   domain: [soc]
-udma/udma_camera:
-  commit: v1.1.2
-  domain: [soc]
+# udma/udma_camera:
+#   commit: v1.1.2
+#   domain: [soc]
 udma/udma_filter:
   commit: v1.0.2
   domain: [soc]
