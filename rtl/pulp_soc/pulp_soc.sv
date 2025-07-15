@@ -148,10 +148,10 @@ module pulp_soc import dm::*; #(
     output logic [191:0]                  gpio_cfg_o,
     output logic                          uart_tx_o,
     input logic                           uart_rx_i,
-    input logic                           cam_clk_i,
-    input logic [7:0]                     cam_data_i,
-    input logic                           cam_hsync_i,
-    input logic                           cam_vsync_i,
+    // input logic                           cam_clk_i,
+    // input logic [7:0]                     cam_data_i,
+    // input logic                           cam_hsync_i,
+    // input logic                           cam_vsync_i,
     output logic [3:0]                    timer_ch0_o,
     output logic [3:0]                    timer_ch1_o,
     output logic [3:0]                    timer_ch2_o,
@@ -639,10 +639,10 @@ module pulp_soc import dm::*; #(
         .pad_cfg_o              ( s_pad_cfg              ),
 
         //CAMERA
-        .cam_clk_i              ( cam_clk_i              ),
-        .cam_data_i             ( cam_data_i             ),
-        .cam_hsync_i            ( cam_hsync_i            ),
-        .cam_vsync_i            ( cam_vsync_i            ),
+        // .cam_clk_i              ( cam_clk_i              ),
+        // .cam_data_i             ( cam_data_i             ),
+        // .cam_hsync_i            ( cam_hsync_i            ),
+        // .cam_vsync_i            ( cam_vsync_i            ),
 
         //UART
         .uart_tx                ( uart_tx_o              ),

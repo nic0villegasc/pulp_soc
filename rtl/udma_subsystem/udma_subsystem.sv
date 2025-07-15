@@ -78,33 +78,33 @@ module udma_subsystem
     output logic           [N_I2C-1:0] i2c_sda_oe,
 
     // CAM
-    input  logic                       cam_clk_i,
-    input  logic  [CAM_DATA_WIDTH-1:0] cam_data_i,
-    input  logic                       cam_hsync_i,
-    input  logic                       cam_vsync_i,
+    // input  logic                       cam_clk_i,
+    // input  logic  [CAM_DATA_WIDTH-1:0] cam_data_i,
+    // input  logic                       cam_hsync_i,
+    // input  logic                       cam_vsync_i,
 
     // UART
     input  logic          [N_UART-1:0] uart_rx_i,
     output logic          [N_UART-1:0] uart_tx_o,
 
     // SDIO
-    output logic                       sdio_clk_o,
-    output logic                       sdio_cmd_o,
-    input  logic                       sdio_cmd_i,
-    output logic                       sdio_cmd_oen_o,
-    output logic                 [3:0] sdio_data_o,
-    input  logic                 [3:0] sdio_data_i,
-    output logic                 [3:0] sdio_data_oen_o,
+    // output logic                       sdio_clk_o,
+    // output logic                       sdio_cmd_o,
+    // input  logic                       sdio_cmd_i,
+    // output logic                       sdio_cmd_oen_o,
+    // output logic                 [3:0] sdio_data_o,
+    // input  logic                 [3:0] sdio_data_i,
+    // output logic                 [3:0] sdio_data_oen_o,
 
     // I2S
-    input  logic                       i2s_slave_sd0_i,
-    input  logic                       i2s_slave_sd1_i,
-    input  logic                       i2s_slave_ws_i,
-    output logic                       i2s_slave_ws_o,
-    output logic                       i2s_slave_ws_oe,
-    input  logic                       i2s_slave_sck_i,
-    output logic                       i2s_slave_sck_o,
-    output logic                       i2s_slave_sck_oe,
+    // input  logic                       i2s_slave_sd0_i,
+    // input  logic                       i2s_slave_sd1_i,
+    // input  logic                       i2s_slave_ws_i,
+    // output logic                       i2s_slave_ws_o,
+    // output logic                       i2s_slave_ws_oe,
+    // input  logic                       i2s_slave_sck_i,
+    // output logic                       i2s_slave_sck_o,
+    // output logic                       i2s_slave_sck_oe,
 
     // HYPERBUS
     output logic [1:0]                 hyper_cs_no,
@@ -851,52 +851,52 @@ module udma_subsystem
     // );
 
     //PER_ID 6
-    assign s_events[4*PER_ID_CAM]    = s_rx_ch_events[CH_ID_RX_CAM];
-    assign s_events[4*PER_ID_CAM+1]  = 1'b0;
-    assign s_events[4*PER_ID_CAM+2]  = 1'b0;
-    assign s_events[4*PER_ID_CAM+3]  = 1'b0;
-    assign s_rx_cfg_stream[CH_ID_RX_CAM] = 'h0;
-    assign s_rx_cfg_stream_id[CH_ID_RX_CAM] = 'h0;
-    assign s_rx_ch_destination[CH_ID_RX_CAM] = 'h0;
-    camera_if #(
-        .L2_AWIDTH_NOAL(L2_AWIDTH_NOAL),
-        .TRANS_SIZE(TRANS_SIZE),
-        .DATA_WIDTH(8)
-    ) i_camera_if (
-        .clk_i(s_clk_periphs_core[PER_ID_CAM]),
-        .rstn_i(sys_resetn_i),
+    // assign s_events[4*PER_ID_CAM]    = s_rx_ch_events[CH_ID_RX_CAM];
+    // assign s_events[4*PER_ID_CAM+1]  = 1'b0;
+    // assign s_events[4*PER_ID_CAM+2]  = 1'b0;
+    // assign s_events[4*PER_ID_CAM+3]  = 1'b0;
+    // assign s_rx_cfg_stream[CH_ID_RX_CAM] = 'h0;
+    // assign s_rx_cfg_stream_id[CH_ID_RX_CAM] = 'h0;
+    // assign s_rx_ch_destination[CH_ID_RX_CAM] = 'h0;
+    // camera_if #(
+    //     .L2_AWIDTH_NOAL(L2_AWIDTH_NOAL),
+    //     .TRANS_SIZE(TRANS_SIZE),
+    //     .DATA_WIDTH(8)
+    // ) i_camera_if (
+    //     .clk_i(s_clk_periphs_core[PER_ID_CAM]),
+    //     .rstn_i(sys_resetn_i),
 
-        .dft_test_mode_i(dft_test_mode_i),
-        .dft_cg_enable_i(dft_cg_enable_i),
+    //     .dft_test_mode_i(dft_test_mode_i),
+    //     .dft_cg_enable_i(dft_cg_enable_i),
 
-        .cfg_data_i          ( s_periph_data_to                ),
-        .cfg_addr_i          ( s_periph_addr                   ),
-        .cfg_valid_i         ( s_periph_valid[PER_ID_CAM]      ),
-        .cfg_rwn_i           ( s_periph_rwn                    ),
-        .cfg_data_o          ( s_periph_data_from[PER_ID_CAM]  ),
-        .cfg_ready_o         ( s_periph_ready[PER_ID_CAM]      ),
+    //     .cfg_data_i          ( s_periph_data_to                ),
+    //     .cfg_addr_i          ( s_periph_addr                   ),
+    //     .cfg_valid_i         ( s_periph_valid[PER_ID_CAM]      ),
+    //     .cfg_rwn_i           ( s_periph_rwn                    ),
+    //     .cfg_data_o          ( s_periph_data_from[PER_ID_CAM]  ),
+    //     .cfg_ready_o         ( s_periph_ready[PER_ID_CAM]      ),
 
-        .cfg_rx_startaddr_o  ( s_rx_cfg_startaddr[CH_ID_RX_CAM]  ),
-        .cfg_rx_size_o       ( s_rx_cfg_size[CH_ID_RX_CAM]       ),
-        .cfg_rx_continuous_o ( s_rx_cfg_continuous[CH_ID_RX_CAM] ),
-        .cfg_rx_en_o         ( s_rx_cfg_en[CH_ID_RX_CAM]         ),
-        .cfg_rx_clr_o        ( s_rx_cfg_clr[CH_ID_RX_CAM]        ),
-        .cfg_rx_en_i         ( s_rx_ch_en[CH_ID_RX_CAM]          ),
-        .cfg_rx_pending_i    ( s_rx_ch_pending[CH_ID_RX_CAM]     ),
-        .cfg_rx_curr_addr_i  ( s_rx_ch_curr_addr[CH_ID_RX_CAM]   ),
-        .cfg_rx_bytes_left_i ( s_rx_ch_bytes_left[CH_ID_RX_CAM]  ),
+    //     .cfg_rx_startaddr_o  ( s_rx_cfg_startaddr[CH_ID_RX_CAM]  ),
+    //     .cfg_rx_size_o       ( s_rx_cfg_size[CH_ID_RX_CAM]       ),
+    //     .cfg_rx_continuous_o ( s_rx_cfg_continuous[CH_ID_RX_CAM] ),
+    //     .cfg_rx_en_o         ( s_rx_cfg_en[CH_ID_RX_CAM]         ),
+    //     .cfg_rx_clr_o        ( s_rx_cfg_clr[CH_ID_RX_CAM]        ),
+    //     .cfg_rx_en_i         ( s_rx_ch_en[CH_ID_RX_CAM]          ),
+    //     .cfg_rx_pending_i    ( s_rx_ch_pending[CH_ID_RX_CAM]     ),
+    //     .cfg_rx_curr_addr_i  ( s_rx_ch_curr_addr[CH_ID_RX_CAM]   ),
+    //     .cfg_rx_bytes_left_i ( s_rx_ch_bytes_left[CH_ID_RX_CAM]  ),
 
-        .data_rx_datasize_o  ( s_rx_ch_datasize[CH_ID_RX_CAM]    ),
-        .data_rx_data_o      ( s_rx_ch_data[CH_ID_RX_CAM][15:0]  ),
-        .data_rx_valid_o     ( s_rx_ch_valid[CH_ID_RX_CAM]       ),
-        .data_rx_ready_i     ( s_rx_ch_ready[CH_ID_RX_CAM]       ),
+    //     .data_rx_datasize_o  ( s_rx_ch_datasize[CH_ID_RX_CAM]    ),
+    //     .data_rx_data_o      ( s_rx_ch_data[CH_ID_RX_CAM][15:0]  ),
+    //     .data_rx_valid_o     ( s_rx_ch_valid[CH_ID_RX_CAM]       ),
+    //     .data_rx_ready_i     ( s_rx_ch_ready[CH_ID_RX_CAM]       ),
 
-        .cam_clk_i           ( cam_clk_i                       ),
-        .cam_data_i          ( cam_data_i                      ),
-        .cam_hsync_i         ( cam_hsync_i                     ),
-        .cam_vsync_i         ( cam_vsync_i                     )
-    );
-    assign s_rx_ch_data[CH_ID_RX_CAM][31:16]='h0;
+    //     .cam_clk_i           ( cam_clk_i                       ),
+    //     .cam_data_i          ( cam_data_i                      ),
+    //     .cam_hsync_i         ( cam_hsync_i                     ),
+    //     .cam_vsync_i         ( cam_vsync_i                     )
+    // );
+    // assign s_rx_ch_data[CH_ID_RX_CAM][31:16]='h0;
 
    //PER_ID 7
     assign s_events[4*PER_ID_FILTER]    = s_filter_eot_evt;
